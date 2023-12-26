@@ -1,13 +1,13 @@
-from fastapi import FastAPI
+from fastapi import FastAPI# Импортирование библиотек
 
-app = FastAPI()
+app = FastAPI() # Инициализация веб-приложения
 
 @app.get("/")
-def read_main():
+def read_main():  #нач страницы, затем роуты (тоже явл роутом)
     return {"message": "Это, так называемый, калькулятор."}
 
-@app.get("/add/{num1}/{num2}")
-def add_numbers(num1: int, num2: int):
+@app.get("/add/{num1}/{num2}") # Путь для path-запроса
+def add_numbers(num1: int, num2: int): # Создание функции, которая принимает в себя 2 числа с плавающей точкой в качестве аргументов
     return {"result": num1 + num2}
 
 @app.get("/subtract/{num1}/{num2}")
